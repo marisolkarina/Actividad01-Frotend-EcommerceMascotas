@@ -1,1 +1,74 @@
 <!-- ALEXIA!-->
+<!DOCTYPE html>
+<html lang="es">
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-wrapper">
+            
+            <div class="left-aligned-content">
+                <form action="/login" method="POST" class="m-5 d-flex flex-column align-items-center" novalidate>
+                    <h2>ACCEDER</h2>
+
+                    <div class="mb-3 w-50">
+                        <label for="email" class="form-label">Dirección de correo</label>
+                        <input type="email" name="email" id="exampleInputEmail1" value="" required>
+                    </div>
+
+                    <div class="mb-3 w-50">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" name="password" id="exampleInputPassword1" minlength="6" value="">
+                    </div>
+
+                    <div class="form-check w-50 mb-3">
+                        <input class="form-check-input" type="checkbox" id="recordarme" name="recordarme">
+                        <label class="form-check-label" for="recordarme">
+                            Recordarme
+                        </label>
+                    </div>
+
+                    <input type="hidden" name="_csrf" value="">
+                    <button type="submit" class="btn btn-verde w-50">Iniciar sesión</button>
+                </form>
+
+                <div class="w-50 text-end mt-2">
+                    <a href="/recuperar-contrasena" class="text-end">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+          
+            <div class="right-aligned-content">
+                <form action="/registro" method="GET" class="m-5 d-flex flex-column align-items-center">
+                    <h2>REGISTRARSE</h2>
+                    <p>Registrarse en este sitio le permite acceder al estado y al historial de su pedido. Simplemente complete los campos a continuación y obtendremos una nueva cuenta configurada para usted en poco tiempo.</p>
+                    <p>Solo te pediremos la información necesaria para que el proceso de compra sea más rápido y sencillo.</p>
+                    <button type="submit" class="btn btn-verde w-50">Regístrate</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Av. Brasil 210, Breña | Teléfono: 920 000 965 | Correo: ventas@petshop.pe</p>
+    </footer>
+</body>
+</html>
