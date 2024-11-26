@@ -1,13 +1,176 @@
-<!-- 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página para finalizar pedido">
+    <title>Finalizar Pedido</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Encabezado principal -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid d-flex flex-row-reverse">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/">Inicio</a>
+                    <a class="nav-link" href="/productos">Productos</a>
+                    <a class="nav-link" href="#">Sobre nosotros</a>
+                    <a class="nav-link" href="/blog">Blog</a>
     
-    CHRISTIAN
-
-    SI NO ESTA LOGUEADO PIDE_: nombre, apellido, dni
+                </div>
+            </div>
+        </nav>
     
-    AL MOMENTO DE COMPRAR SIEMPRE PIDE:
-    direccion de envio, pais, region, ciudad, codigo postal, nro telefono
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">PetShop</a>
+                
+                <form class="d-flex" role="search" action="/productos" method="POST">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="textoIngresado">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </form>
+            </div>
+            
+            <a class="btn btn-success" href="inicio-sesion.html">Login</a>
+        
+            <form action="/salir" method="post">
+                <button type="submit" class="btn btn-secondary">Salir</button>
+            </form>
+            
+        </nav>
+    
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid bg-primary">
+                <div class="navbar-nav">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <a class="nav-link text-white" href="/productos/perro">Perro</a>
+                        <a class="nav-link text-white" href="/productos/gato">Gato</a>
+                        <a class="nav-link text-white" href="/productos/conejo">Conejo</a>
+                        <a class="nav-link text-white" href="/productos/hamster">Hamster</a>
+                        <a class="nav-link text-white" href="/promociones">Promociones</a>
+                        <a class="nav-link text-white" href="carrito.html">Carrito</a>
+                        <a class="nav-link text-white" href="/detalles-cuenta">Mi Cuenta</a>
+                            
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        
+    </header>
 
-    pago: nro tarjeta, nombre, cvv, fecha venciminto
+    <!-- Contenido principal -->
+    <main>
+        <div class="container py-5">
+            <h3>Finalizar Pedido</h3>
+    
+            <!-- Información Personal -->
+            <section class="my-4">
+                <h4>Información Personal</h4>
+                <form action="/finalizar-pedido/personal" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label">DNI:</label>
+                        <input type="text" id="dni" name="dni" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </section>
 
-    boton para confirmar el pago
--->
+            <!-- Datos de Envío -->
+            <section class="my-4">
+                <h4>Datos de Envío</h4>
+                <form action="/finalizar-pedido/envio" method="POST">
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección de Envío:</label>
+                        <input type="text" id="direccion" name="direccion" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pais" class="form-label">País:</label>
+                        <input type="text" id="pais" name="pais" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="region" class="form-label">Región:</label>
+                        <input type="text" id="region" name="region" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ciudad" class="form-label">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="codigo-postal" class="form-label">Código Postal:</label>
+                        <input type="text" id="codigo-postal" name="codigo-postal" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono de Contacto:</label>
+                        <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </section>
+
+            <!-- Información de Pago -->
+            <section class="my-4">
+                <h4>Información de Pago</h4>
+                <form action="/finalizar-pedido/pago" method="POST">
+                    <div class="mb-3">
+                        <label for="numero-tarjeta" class="form-label">Número de Tarjeta:</label>
+                        <input type="text" id="numero-tarjeta" name="numero-tarjeta" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha-vencimiento" class="form-label">Fecha de Vencimiento:</label>
+                        <input type="month" id="fecha-vencimiento" name="fecha-vencimiento" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cvv" class="form-label">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre-tarjeta" class="form-label">Nombres del Titular:</label>
+                        <input type="text" id="nombre-tarjeta" name="nombre-tarjeta" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido-tarjeta" class="form-label">Apellidos del Titular:</label>
+                        <input type="text" id="apellido-tarjeta" name="apellido-tarjeta" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </section>
+
+            <!-- Confirmar Pedido -->
+            <section class="my-4">
+                <form action="/lista-pedidos.html" method="POST">
+                    <button type="submit" class="btn btn-success">Confirmar Pedido</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center p-4">
+        <p>Av. Brasil 210, Breña</p>
+        <p>Teléfono: 920 000 965</p>
+        <p>Correo: ventas@petshop.pe</p>
+        <p>Horario de atención: Lunes a Sábado de 9:00 am a 7:30 pm</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
