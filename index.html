@@ -29,7 +29,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand">PetShop</a>
                 
-                <form class="d-flex" role="search" action="/productos" method="POST">
+                <form class="d-flex" role="search" action="" method="">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="textoIngresado">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button class="btn btn-success" type="submit">Buscar</button>
@@ -38,7 +38,7 @@
             
             <a class="btn btn-success" href="inicio-sesion.html">Login</a>
         
-            <form action="/salir" method="post">
+            <form action="" method="">
                 <button type="submit" class="btn btn-secondary">Salir</button>
             </form>
             
@@ -51,13 +51,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <a class="nav-link text-white" href="/productos/perro">Perro</a>
-                        <a class="nav-link text-white" href="/productos/gato">Gato</a>
-                        <a class="nav-link text-white" href="/productos/conejo">Conejo</a>
-                        <a class="nav-link text-white" href="/productos/hamster">Hamster</a>
-                        <a class="nav-link text-white" href="/promociones">Promociones</a>
+                        <a class="nav-link text-white" href="">Perro</a>
+                        <a class="nav-link text-white" href="">Gato</a>
+                        <a class="nav-link text-white" href="">Conejo</a>
+                        <a class="nav-link text-white" href="">Promociones</a>
                         <a class="nav-link text-white" href="carrito.html">Carrito</a>
-                        <a class="nav-link text-white" href="/detalles-cuenta">Mi Cuenta</a>
+                        <a class="nav-link text-white" href="">Mi Cuenta</a>
                             
                     </div>
                 </div>
@@ -67,9 +66,160 @@
         
     </header>
 
+    
     <!-- Contenido principal -->
-    <main>
-        <h1>Lista de productos</h1>
+    <main class="row">
+        <h1 class="text-center">Lista de productos</h1>
+
+        <!-- Filtros -->
+        <aside class="col-3">
+
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Seleccione modo de orden
+                </a>
+              
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="">Ordenar alfabeticamente</a></li>
+                    <li><a class="dropdown-item" href="">Ordenar por precio de menor a mayor</a></li>
+                    <li><a class="dropdown-item" href="">Ordenar por precio de mayor a menor</a></li>
+                </ul>
+            </div>
+            
+
+            <div>
+                <h5>Categorias</h5>
+                <ul class="list-unstyled list-group">
+                    <li><a class="list-group-item list-group-item-action" href="">Perro</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="">Gato</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="">Conejo</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Filtrar por precio</h5>
+                <form action="" method="">
+                    <label for="min">Mín</label>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="min">
+                    <label for="max">Max</label>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="max">
+                    <button class="btn btn-success">Filtrar</button>
+                </form>
+            </div>
+
+            <div>
+                <h5>Filtrar por color</h5>
+                <ul class="list-unstyled list-group">
+                    <li><a class="list-group-item list-group-item-action" href="">Rojo</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="">Azul</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="">Celeste</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="">Blanco</a></li>
+                    <li><a class="list-group-item list-group-item-action" href="">Marron</a></li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- Productos de la tienda -->
+        <section class="col-9">
+            <div class="container">
+                <div class="row m-3">
+                    <div class="col-md-4 mb-2">
+                        <div class="card" style="width: 18rem;">
+
+                            <figure>
+                                <img src="https://www.cochikis.pe/wp-content/uploads/2022/07/alfombracognitiva1.jpg" class="card-img-top" alt="alfombra cognitiva">
+                                <figcaption class="card-title text-center mt-2">Alfombra Cognitiva Estrella</figcaption>
+                            </figure>
+
+                            
+                            <div class="card-body">
+                                
+                                <p class="card-title text-center mt-2"> Precio: S/. 129.00</p>
+                                <p>Categoria: Perro</p>
+                                <p>Color: Rojo</p>
+                                <p>Descripcion: </p>
+                                <p>Estimula las habilidades cognitivas de tu mascota con nuestra alfombra cognitiva estrella.
+                                    Esta alfombra posee capas y compartimentos para esconder treats y estimular el instinto de
+                                    rastreo y olfato de tu perrito.</p>
+
+                                <!-- Agregar a la lista de deseos -->
+                                <form method="" action="">
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                        </svg>
+                                    </button>
+                                </form>
+
+                                <!-- Agregar al carrito -->
+                                <form method="" action="/carrito.html">
+                                    <button class="btn btn-success w-100" type="submit">Agregar al Carrito</button>
+                                    <label class="w-50">Cantidad</label>
+                                    <input type="number" id="cantidad" min="1" step="1" name="cantidad" value="1" class="form-control w-50"/>
+                                    <span>Stock: 5</span>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+
+                        <figure>
+                            <img src="https://www.cochikis.pe/wp-content/uploads/2023/04/accecan-collar-corbatita-michi-miniflores.jpg" class="card-img-top" alt="collar">
+                            <figcaption class="card-title text-center mt-2">Accecan Collar Michi Flores Mini</figcaption>
+                        </figure>
+                        
+                        <div class="card-body">
+                            
+                            <p class="card-title text-center mt-2"> Precio: S/. 15.00</p>
+                            <p>Categoria: Gato</p>
+                            <p>Color: Celeste</p>
+                            <p>Descripcion: </p>
+                            <p>Este pequeño detalle no solo añade un toque de encanto, sino que también te permite mantener 
+                                un seguimiento de los movimientos de tu gato en todo momento.</p>
+
+                            <!-- Agregar a la lista de deseos -->
+                            <form method="" action="">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                    </svg>
+                                </button>
+                            </form>
+
+                            <!-- Agregar al carrito -->
+                            <form method="" action="/carrito.html">
+                                <button class="btn btn-success w-100" type="submit">Agregar al Carrito</button>
+                                <label class="w-50">Cantidad</label>
+                                <input type="number" id="cantidad" min="1" step="1" name="cantidad" value="1" class="form-control w-50"/>
+                                <span>Stock: 5</span>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Paginacion -->
+        <nav class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item active">
+                    <a class="page-link" href="">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="">3</a>
+                </li>
+            </ul>
+        </nav>
+
     </main>
 
     <!-- Pie de página -->

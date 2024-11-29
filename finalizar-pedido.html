@@ -17,7 +17,7 @@
                     <a class="nav-link" href="index.html">Inicio</a>
                     <a class="nav-link" href="index.html">Productos</a>
                     <a class="nav-link" href="#">Sobre nosotros</a>
-                    <a class="nav-link" href="/blog">Blog</a>
+                    <a class="nav-link" href="#">Blog</a>
     
                 </div>
             </div>
@@ -27,16 +27,15 @@
             <div class="container-fluid">
                 <a class="navbar-brand">PetShop</a>
                 
-                <form class="d-flex" role="search" action="/productos" method="POST">
+                <form class="d-flex" role="search" action="" method="">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="textoIngresado">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button class="btn btn-success" type="submit">Buscar</button>
                 </form>
             </div>
             
             <a class="btn btn-success" href="inicio-sesion.html">Login</a>
         
-            <form action="/salir" method="post">
+            <form action="" method="">
                 <button type="submit" class="btn btn-secondary">Salir</button>
             </form>
             
@@ -49,13 +48,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <a class="nav-link text-white" href="/productos/perro">Perro</a>
-                        <a class="nav-link text-white" href="/productos/gato">Gato</a>
-                        <a class="nav-link text-white" href="/productos/conejo">Conejo</a>
-                        <a class="nav-link text-white" href="/productos/hamster">Hamster</a>
-                        <a class="nav-link text-white" href="/promociones">Promociones</a>
+                        <a class="nav-link text-white" href="">Perro</a>
+                        <a class="nav-link text-white" href="">Gato</a>
+                        <a class="nav-link text-white" href="">Conejo</a>
+                        <a class="nav-link text-white" href="">Promociones</a>
                         <a class="nav-link text-white" href="carrito.html">Carrito</a>
-                        <a class="nav-link text-white" href="/detalles-cuenta">Mi Cuenta</a>
+                        <a class="nav-link text-white" href="">Mi Cuenta</a>
                             
                     </div>
                 </div>
@@ -73,7 +71,7 @@
             <!-- Información Personal -->
             <section class="my-4">
                 <h4>Información Personal</h4>
-                <form action="/finalizar-pedido/personal" method="POST">
+                <form action="" method="">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" class="form-control" required>
@@ -93,7 +91,7 @@
             <!-- Datos de Envío -->
             <section class="my-4">
                 <h4>Datos de Envío</h4>
-                <form action="/finalizar-pedido/envio" method="POST">
+                <form action="" method="">
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección de Envío:</label>
                         <input type="text" id="direccion" name="direccion" class="form-control" required>
@@ -125,7 +123,7 @@
             <!-- Información de Pago -->
             <section class="my-4">
                 <h4>Información de Pago</h4>
-                <form action="/finalizar-pedido/pago" method="POST">
+                <form action="" method="">
                     <div class="mb-3">
                         <label for="numero-tarjeta" class="form-label">Número de Tarjeta:</label>
                         <input type="text" id="numero-tarjeta" name="numero-tarjeta" class="form-control" required>
@@ -156,7 +154,7 @@
 
             <!-- Confirmar Pedido -->
             <section class="my-4">
-                <form action="/lista-pedidos.html" method="POST">
+                <form action="" method="">
                     <button type="submit" class="btn btn-success">Confirmar Pedido</button>
                 </form>
             </section>

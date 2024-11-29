@@ -20,7 +20,7 @@
                     <a class="nav-link" href="index.html">Inicio</a>
                     <a class="nav-link" href="index.html">Productos</a>
                     <a class="nav-link" href="#">Sobre nosotros</a>
-                    <a class="nav-link" href="/blog">Blog</a>
+                    <a class="nav-link" href="#">Blog</a>
 
                 </div>
             </div>
@@ -30,17 +30,15 @@
             <div class="container-fluid">
                 <a class="navbar-brand">PetShop</a>
 
-                <form class="d-flex" role="search" action="/productos" method="POST">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
-                        name="textoIngresado">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <form class="d-flex" role="search" action="" method="">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="textoIngresado">
                     <button class="btn btn-success" type="submit">Buscar</button>
                 </form>
             </div>
 
             <a class="btn btn-success" href="inicio-sesion.html">Login</a>
 
-            <form action="/salir" method="post">
+            <form action="" method="">
                 <button type="submit" class="btn btn-secondary">Salir</button>
             </form>
 
@@ -55,13 +53,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <a class="nav-link text-white" href="/productos/perro">Perro</a>
-                        <a class="nav-link text-white" href="/productos/gato">Gato</a>
-                        <a class="nav-link text-white" href="/productos/conejo">Conejo</a>
-                        <a class="nav-link text-white" href="/productos/hamster">Hamster</a>
-                        <a class="nav-link text-white" href="/promociones">Promociones</a>
+                        <a class="nav-link text-white" href="">Perro</a>
+                        <a class="nav-link text-white" href="">Gato</a>
+                        <a class="nav-link text-white" href="">Conejo</a>
+                        <a class="nav-link text-white" href="">Promociones</a>
                         <a class="nav-link text-white" href="carrito.html">Carrito</a>
-                        <a class="nav-link text-white" href="/detalles-cuenta">Mi Cuenta</a>
+                        <a class="nav-link text-white" href="">Mi Cuenta</a>
 
                     </div>
                 </div>
@@ -75,7 +72,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <form action="/registro" method="POST" class="m-5 d-flex flex-column align-items-center" novalidate>
+                    <form action="" method="" class="m-5 d-flex flex-column align-items-center" novalidate>
                         <h2>REGÍSTRATE</h2>
                         <div class="alert alert-danger d-none">Error en el formulario</div>
 
@@ -111,14 +108,11 @@
 
                         <div class="mb-3 w-100">
                             <label for="confirmPassword" class="form-label">Vuelva a escribir la contraseña</label>
-                            <input type="password" name="confirmPassword" class="form-control" id="confirmPassword"
-                                minlength="6" required>
+                            <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" minlength="6" required>
                         </div>
-
 
                         <p class="text-muted w-100">Se enviará un mensaje a tu dirección de correo electrónico como
                             bienvenida.</p>
-
 
                         <p class="text-muted w-100">
                             Tus datos personales se utilizarán para procesar tu pedido, mejorar tu
@@ -126,18 +120,13 @@
                             propósitos descritos en nuestra <a href="#">política de privacidad</a>.
                         </p>
 
-                        <input type="hidden" name="_csrf" value="TOKEN_CSRF_AQUI">
                         <button type="submit" class="btn btn-success w-100">Regístrate</button>
 
-                        <script type="module">
-                            import { checkPasswordStrength } from '/utils/checkPasswordStrength.js';
-                            document.getElementById('password').addEventListener('input', checkPasswordStrength);
-                        </script>
                     </form>
                 </div>
 
                 <div class="col-md-6 d-flex align-items-center">
-                    <form action="/login" method="GET" class="m-5 d-flex flex-column align-items-center w-100">
+                    <form action="inicio-sesion.html" method="GET" class="m-5 d-flex flex-column align-items-center w-100">
                         <h2>INICIAR SESIÓN</h2>
                         <p class="text-muted">
                             Al iniciar sesión, tendrás acceso a tu historial de pedidos, podrás gestionar

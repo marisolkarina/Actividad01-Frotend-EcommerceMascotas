@@ -15,7 +15,7 @@
                         <a class="nav-link" href="index.html">Inicio</a>
                         <a class="nav-link" href="index.html">Productos</a>
                         <a class="nav-link" href="#">Sobre nosotros</a>
-                        <a class="nav-link" href="/blog">Blog</a>
+                        <a class="nav-link" href="#">Blog</a>
         
                     </div>
                 </div>
@@ -27,7 +27,6 @@
                     
                     <form class="d-flex" role="search" action="/productos" method="POST">
                         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="textoIngresado">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button class="btn btn-success" type="submit">Buscar</button>
                     </form>
                 </div>
@@ -47,13 +46,12 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <a class="nav-link text-white" href="/productos/perro">Perro</a>
-                            <a class="nav-link text-white" href="/productos/gato">Gato</a>
-                            <a class="nav-link text-white" href="/productos/conejo">Conejo</a>
-                            <a class="nav-link text-white" href="/productos/hamster">Hamster</a>
-                            <a class="nav-link text-white" href="/promociones">Promociones</a>
+                            <a class="nav-link text-white" href="">Perro</a>
+                            <a class="nav-link text-white" href="">Gato</a>
+                            <a class="nav-link text-white" href="">Conejo</a>
+                            <a class="nav-link text-white" href="">Promociones</a>
                             <a class="nav-link text-white" href="carrito.html">Carrito</a>
-                            <a class="nav-link text-white" href="/detalles-cuenta">Mi Cuenta</a>
+                            <a class="nav-link text-white" href="">Mi Cuenta</a>
                                 
                         </div>
                     </div>
@@ -64,85 +62,88 @@
         </header>
 
         <main>
-            <div class="container carrito-container">
-                <h3>Carrito de compras</h3>
-    
-                <h4>Total: S/. 159.00 </h4>
-                
-                
-                    <form action="finalizar-pedido.html" method="POST">
-                        <button type="submit" class="btn btn-success">Confirmar pedido</button>
-                    </form>
-    
-                    <div class="carrito-detalle">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Imagen</th>
-                                    <th>Color</th>
-                                    <th>Categoria</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Unitario</th>
-                                    <th>Subtotal</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-    
-                                    <tr>
-                                        <td> Alfombra Cognitiva Estrella </td>
-                                        <td>
-                                            <img src="https://www.cochikis.pe/wp-content/uploads/2022/07/alfombracognitiva1.jpg" alt="imagen de producto" class="img-thumbnail carrito-img">
-                                        </td>
-                                        <td>Rojo</td>
-                                        <td>Perro</td>
-                                        <td>
-                                            <form action="/actualizar-cantidad" method="POST">
-                                                <input type="number" name="cantidad" value="1" min="1" class="form-control">
-                                                <button type="submit" class="btn btn-secondary mt-2">Actualizar</button>
-                                            </form>
-                                        </td>
-                                        <td>S/. 129.00 </td>
-                                        <td>S/. 129.00 </td>
-                                        <td>
-                                            <form action="/eliminar-producto" method="POST">
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+            <h3 class="text-center">Carrito de compras</h3>
 
-                                    <tr>
-                                        <td> Accecan Collar Michi Flores Mini </td>
-                                        <td>
-                                            <img src="https://www.cochikis.pe/wp-content/uploads/2023/04/accecan-collar-corbatita-michi-miniflores.jpg" alt="imagen de producto" class="img-thumbnail carrito-img">
-                                        </td>
-                                        <td>Celeste</td>
-                                        <td>Gato</td>
-                                        <td>
-                                            <form action="/actualizar-cantidad" method="POST">
-                                                <input type="number" name="cantidad" value="2" min="1" class="form-control">
-                                                <button type="submit" class="btn btn-secondary mt-2">Actualizar</button>
-                                            </form>
-                                        </td>
-                                        <td>S/. 15.00 </td>
-                                        <td>S/. 30.00</td>
+            <h4>Total: S/. 159.00 </h4>
+            
+                <form action="finalizar-pedido.html" method="">
+                    <button type="submit" class="btn btn-success">Confirmar pedido</button>
+                </form>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Imagen</th>
+                            <th>Color</th>
+                            <th>Categoria</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                            <th>Subtotal</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                            <tr>
+                                <td> Alfombra Cognitiva Estrella </td>
+                                <td>
                                     
-                                        <td>
-                                            <form action="/eliminar-producto" method="POST">
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                
-                            </tbody>
-                        </table>
-    
-                    </div>
+                                    <figure>
+                                        <img src="https://www.cochikis.pe/wp-content/uploads/2022/07/alfombracognitiva1.jpg" alt="alfombra cognitiva">
+                                        <figcaption class="card-title text-center mt-2">Alfombra Cognitiva Estrella</figcaption>
+                                    </figure>
+                                </td>
+                                <td>Rojo</td>
+                                <td>Perro</td>
+                                <td>
+                                    <!-- Actualizar cantidad -->
+                                    <form action="" method="">
+                                        <input type="number" name="cantidad" value="1" min="1" class="form-control">
+                                        <button type="submit" class="btn btn-secondary mt-2">Actualizar</button>
+                                    </form>
+                                </td>
+                                <td>S/. 129.00 </td>
+                                <td>S/. 129.00 </td>
+                                <td>
+                                    <!-- eliminar producto -->
+                                    <form action="" method="">
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td> Accecan Collar Michi Flores Mini </td>
+                                <td>
+                                    <img src="https://www.cochikis.pe/wp-content/uploads/2023/04/accecan-collar-corbatita-michi-miniflores.jpg" alt="collar">
+                                </td>
+                                <td>Celeste</td>
+                                <td>Gato</td>
+                                <td>
+                                    <!-- Actualizar cantidad -->
+                                    <form action="" method="">
+                                        <input type="number" name="cantidad" value="1" min="1" class="form-control">
+                                        <button type="submit" class="btn btn-secondary mt-2">Actualizar</button>
+                                    </form>
+                                </td>
+                                <td>S/. 15.00 </td>
+                                <td>S/. 30.00</td>
+                            
+                                <td>
+                                    <!-- eliminar producto -->
+                                    <form action="" method="">
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+
+            
+            <a href="index.html" class="btn btn-primary">Seguir comprando</a>
                 
-                <a href="index.html" class="btn btn-primary">Seguir comprando</a>
-                
-            </div>
         </main>
 
         <footer class="bg-dark text-white">
